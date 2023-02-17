@@ -1,0 +1,16 @@
+Started by user unknown or anonymous
+[Pipeline] Start of Pipeline
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] echo
+this is my first pipeline job
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (test)
+[Pipeline] echo
+This is a test for the build
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] End of Pipeline
+Finished: SUCCESS
