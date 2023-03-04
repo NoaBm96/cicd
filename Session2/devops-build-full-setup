@@ -1,0 +1,37 @@
+pipeline{
+    agent any
+        stages{ 
+            stage('set parameters'){
+                steps{
+                    script{
+                        properties([
+                            parameters([
+                                choice(
+                                    choices: ['enabled', 'disabled'], 
+                                    description: 'enable or disable deploy step.', 
+                                    name: 'deploy')
+                            ])
+                        ])
+                    }
+                }
+            }
+            stage('Deploy to Production') {
+                steps{
+                    script{
+                        if(deploy.equals("enabled")){
+                            echo "deploy parameter is - $params.deploy"
+                            node('jenkins-ec2-agent01'){
+                                sh 'sudo service docker start'
+                                sh 'docker run -t -d --rm training/webapp:latest'
+                            }   
+                        }
+                        else if(deploy.equals("disabled")){
+                            echo "deploy parameter is - $params.deploy"
+                            echo "no other actions will be performed"
+                        }
+                    }
+                }
+            }
+        }
+}
+

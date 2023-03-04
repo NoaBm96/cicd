@@ -1,0 +1,4 @@
+node('jenkins-ec2-agent01'){
+    sh 'sudo service docker start'
+    sh 'docker run -t -d --rm training/webapp:latest'
+}

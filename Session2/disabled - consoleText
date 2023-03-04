@@ -1,0 +1,30 @@
+Started by user unknown or anonymous
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on jenkins-ec2-agent01 in /home/ec2-user/jenkins-agent/jenkins-agent/workspace/devops-build-full-setup
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (set parameters)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] properties
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Production)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+deploy parameter is - disabled
+[Pipeline] echo
+no other actions will be performed
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

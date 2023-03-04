@@ -1,0 +1,39 @@
+Started by user unknown or anonymous
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on jenkins-ec2-agent01 in /home/ec2-user/jenkins-agent/jenkins-agent/workspace/devops-build-full-setup
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (set parameters)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] properties
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Production)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+deploy parameter is - enabled
+[Pipeline] node
+Running on jenkins-ec2-agent01 in /home/ec2-user/jenkins-agent/jenkins-agent/workspace/devops-build-full-setup@2
+[Pipeline] {
+[Pipeline] sh
++ sudo service docker start
+Redirecting to /bin/systemctl start docker.service
+[Pipeline] sh
++ docker run -t -d --rm training/webapp:latest
+53d5f434611d712f61afa46a4c6bca7b028782e4c449fde98c1c39ba9905ec3d
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
