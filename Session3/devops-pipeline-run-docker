@@ -1,0 +1,20 @@
+node("linux") {
+    customImage = ""
+    stage("create dockerfile") {
+        sh """
+            tee Dockerfile <<-'EOF'
+            FROM ubuntu:latest
+            RUN touch file-01.txt
+EOF
+        """
+    }
+    stage("build docker") {
+        customImage = docker.build("noaku/opsschool-jenkins-hw-03")
+        withDockerRegistry(credentialsId: 'dockerhub.noaku'){
+                        customImage.push()
+        }
+    }
+    stage("verify dockers") {
+      sh "docker images"
+    }
+}
